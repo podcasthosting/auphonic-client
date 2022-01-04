@@ -219,7 +219,7 @@ namespace podcasthosting\Auphonic\Resource\Production {
         }
 
         /**
-         * @param \podcasthosting\Resource\Production\Metadata\Location $location
+         * @param Location $location
          */
         public function setLocation(Location $location)
         {
@@ -227,7 +227,7 @@ namespace podcasthosting\Auphonic\Resource\Production {
         }
 
         /**
-         * @return \podcasthosting\Resource\Production\Metadata\Location
+         * @return Location
          */
         public function getLocation()
         {

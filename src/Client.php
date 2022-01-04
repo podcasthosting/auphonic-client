@@ -2,11 +2,11 @@
 
 namespace podcasthosting\Auphonic {
 
+    use Buzz\Browser;
+    use GuzzleHttp\Psr7\Request;
     use podcasthosting\Auphonic\Client\Preset;
     use podcasthosting\Auphonic\Client\Production;
     use podcasthosting\Auphonic\Token\Token;
-    use Buzz\Browser;
-    use GuzzleHttp\Psr7\Request;
     use Psr\Http\Message\RequestInterface;
 
     class Client
@@ -180,12 +180,6 @@ namespace podcasthosting\Auphonic {
          */
         public function process(array $request)
         {
-            //$response = (new \Buzz\Browser(new \Buzz\Client\FileGetContents(new \Nyholm\Psr7\Factory\Psr17Factory), new \Nyholm\Psr7\Factory\Psr17Factory))->request($request['method'], $request['url'], $request['headers']);
-/*            $client = new \GuzzleHttp\Client([
-                'headers' => $request['headers'],
-            ]);
-            $response = $client->request($request['method'], $request['url']);*/
-
             $client = new \GuzzleHttp\Client();
             $request = new Request($request['method'], $request['url'], $request['headers']);
             $response = $client->send($request);
@@ -195,8 +189,6 @@ namespace podcasthosting\Auphonic {
             }
 
             return $response->getBody()->getContents();
-            //return (string) $response->getBody()->getContents();
-            //return $response->getBody()->__toString();
         }
 
         /**
@@ -209,7 +201,6 @@ namespace podcasthosting\Auphonic {
         public function createRequest(string $method, $url)
         {
             // create new request
-            //$request = (new RequestFactory)->createRequest($method, (new UriFactory())->createUri($url));
             $request = [
                 'method' => $method,
                 'url' => $url,
@@ -224,7 +215,6 @@ namespace podcasthosting\Auphonic {
                  * generate header for OAuth2 bearer token
                  * http://self-issued.info/docs/draft-ietf-oauth-v2-bearer.html
                  */
-//                $request = $request->withAddedHeader('Authorization', sprintf("Bearer %s", $this->token->getToken()));
                 $request['headers']['Authorization'] = sprintf("Bearer %s", $this->token->getToken());
             } elseif ($this->allowUserPasswordAuthentification) {
                 /**
@@ -240,7 +230,6 @@ namespace podcasthosting\Auphonic {
                 $request['headers']['Authorization'] = sprintf("Basic %s", $base64Encoded);
             }
             // set content type header
-            //return $request->withAddedHeader("Content-Type", "application/json");
             return $request;
         }
 
@@ -253,19 +242,6 @@ namespace podcasthosting\Auphonic {
         public function createApiUrl(string $path): string
         {
             return sprintf("%s%s", Client::API_BASEURL, $path);
-        }
-
-        /**
-         * Merges the given data into the given base.
-         * This is done recursively.
-         *
-         * @param \StdClass|array $data
-         * @param \StdClass $base
-         */
-        public function merge($data, $base)
-        {
-            foreach($data as $name => $value) {
-            }
         }
 
         /**
