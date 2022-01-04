@@ -26,7 +26,7 @@ namespace podcasthosting\Auphonic {
          * API authentication token.
          * If none is given the request will be done without any authentification.
          *
-         * @var null|Token
+         * @var null|string
          */
         protected $token;
 
@@ -51,8 +51,8 @@ namespace podcasthosting\Auphonic {
         protected $password;
 
         /**
-         * Flag for username and password authetification.
-         * If true a user:password authetification per request is possible.
+         * Flag for username and password authentification.
+         * If true a user:password authentification per request is possible.
          *
          * @var boolean
          */
@@ -99,7 +99,7 @@ namespace podcasthosting\Auphonic {
          * Setter injection.
          * Set api token for authentification.
          *
-         * @param Token|null $token
+         * @param string|null $token
          */
         public function setToken($token)
         {
@@ -215,7 +215,7 @@ namespace podcasthosting\Auphonic {
                  * generate header for OAuth2 bearer token
                  * http://self-issued.info/docs/draft-ietf-oauth-v2-bearer.html
                  */
-                $request['headers']['Authorization'] = sprintf("Bearer %s", $this->token->getToken());
+                $request['headers']['Authorization'] = sprintf("Bearer %s", $this->token);
             } elseif ($this->allowUserPasswordAuthentification) {
                 /**
                  * generate header for HTTP basic auth
