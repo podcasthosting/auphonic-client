@@ -5,7 +5,7 @@
  * Time: 14:37
  */
 
-namespace de\podcaster\Auphonic {
+namespace podcasthosting\Auphonic {
 
     class Autoloader {
 

@@ -1,9 +1,9 @@
 <?php
-namespace de\podcaster\Auphonic\Client;
+namespace podcasthosting\Auphonic\Client;
 
-use de\podcaster\Auphonic\Exception;
-use de\podcaster\Auphonic\Client;
-use de\podcaster\Auphonic\Resource\Production\Metadata;
+use podcasthosting\Auphonic\Exception;
+use podcasthosting\Auphonic\Client;
+use podcasthosting\Auphonic\Resource\Production\Metadata;
 
 class Preset
 {
@@ -27,7 +27,7 @@ class Preset
         $this->client = $client;
     }
 
-    public function create(\de\podcaster\Auphonic\Resource\Preset $preset)
+    public function create(\podcasthosting\Auphonic\Resource\Preset $preset)
     {
         // create Url object.
         //$url = $this->client->createApiUrl(self::APIURL_RESOURCE);
@@ -46,7 +46,7 @@ class Preset
      *
      * @param $uuid
      *
-     * @return \de\podcaster\Auphonic\Resource\Preset
+     * @return \podcasthosting\Auphonic\Resource\Preset
      */
     public function load($uuid)
     {
@@ -61,7 +61,7 @@ class Preset
 
         $preset = $this->client->decode($result, $type = "Preset");
 
-        if(!($preset instanceof \de\podcaster\Auphonic\Resource\Preset)) {
+        if(!($preset instanceof \podcasthosting\Auphonic\Resource\Preset)) {
             throw new Exception(sprintf("Preset expected but %s given", get_class($preset)));
         }
 
@@ -71,7 +71,7 @@ class Preset
     /**
      * Returns a list with all productions received from auphonic.
      *
-     * @return \de\podcaster\Auphonic\Resource\Preset[]
+     * @return \podcasthosting\Auphonic\Resource\Preset[]
      */
     public function getList()
     {

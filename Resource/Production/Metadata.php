@@ -1,10 +1,10 @@
 <?php
 
-namespace de\podcaster\Auphonic\Resource\Production {
+namespace podcasthosting\Auphonic\Resource\Production {
 
-    use de\podcaster\Auphonic\ParseTrait;
-    use de\podcaster\Auphonic\Resource\Production\Metadata\Location;
-    use de\podcaster\Auphonic\Resource\ResourceFactory;
+    use podcasthosting\Auphonic\ParseTrait;
+    use podcasthosting\Auphonic\Resource\Production\Metadata\Location;
+    use podcasthosting\Auphonic\Resource\ResourceFactory;
 
     class Metadata implements ResourceFactory, \JsonSerializable
     {
@@ -219,7 +219,7 @@ namespace de\podcaster\Auphonic\Resource\Production {
         }
 
         /**
-         * @param \de\podcaster\Resource\Production\Metadata\Location $location
+         * @param \podcasthosting\Resource\Production\Metadata\Location $location
          */
         public function setLocation(Location $location)
         {
@@ -227,7 +227,7 @@ namespace de\podcaster\Auphonic\Resource\Production {
         }
 
         /**
-         * @return \de\podcaster\Resource\Production\Metadata\Location
+         * @return \podcasthosting\Resource\Production\Metadata\Location
          */
         public function getLocation()
         {

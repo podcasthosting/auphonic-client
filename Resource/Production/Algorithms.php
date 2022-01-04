@@ -1,8 +1,8 @@
 <?php
 
-namespace de\podcaster\Auphonic\Resource\Production {
+namespace podcasthosting\Auphonic\Resource\Production {
 
-    use de\podcaster\Auphonic\ParseTrait;
+    use podcasthosting\Auphonic\ParseTrait;
 
     class Algorithms
     {

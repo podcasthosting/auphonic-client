@@ -1,12 +1,12 @@
 <?php
 
-namespace de\podcaster\Auphonic {
+namespace podcasthosting\Auphonic {
 
     /**
      * Class AuphonicException
      * Used to identify Exceptions thrown by this bundle.
      *
-     * @package de\podcaster\Auphonic
+     * @package podcasthosting\Auphonic
      */
     class Exception extends \Exception { }
 }

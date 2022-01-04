@@ -1,9 +1,9 @@
 <?php
-namespace de\podcaster\Auphonic;
+namespace podcasthosting\Auphonic;
 
-use de\podcaster\Auphonic\Client\Preset;
-use de\podcaster\Auphonic\Client\Production;
-use de\podcaster\Auphonic\Token\Token;
+use podcasthosting\Auphonic\Client\Preset;
+use podcasthosting\Auphonic\Client\Production;
+use podcasthosting\Auphonic\Token\Token;
 
 class Client
 {
@@ -195,7 +195,7 @@ class Client
     {
         // create new request
         $aOpts['headers']["Accept"] = 'application/json';
-        $aOpts['headers']['User-Agent'] = 'podcaster.de/1.1';
+        $aOpts['headers']['User-Agent'] = 'podcasthosting-auphonic/0.1';
         //$aOpts["debug"] = true;
         // add token if given
         if($this->token) {
@@ -228,7 +228,7 @@ class Client
      * Creates a url object with the auphonic api base url and appends the $path
      *
      * @param string $path
-     * @return Url
+     * @return string Url
      */
     public function createApiUrl($path)
     {

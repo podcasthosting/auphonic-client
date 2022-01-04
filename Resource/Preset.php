@@ -1,5 +1,5 @@
 <?php
-namespace de\podcaster\Auphonic\Resource {
+namespace podcasthosting\Auphonic\Resource {
 
     class Preset extends Production
     {

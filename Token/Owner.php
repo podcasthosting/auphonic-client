@@ -1,12 +1,12 @@
 <?php
 
-namespace de\podcaster\Auphonic\Token;
+namespace podcasthosting\Auphonic\Token;
 
 /**
  * Class Owner
  * Interface to implement on a entity that will store the token related to the API user.
  *
- * @package de\podcaster\Token
+ * @package podcasthosting\Token
  */
 interface Owner
 {

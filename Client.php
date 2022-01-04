@@ -1,10 +1,10 @@
 <?php
 
-namespace de\podcaster\Auphonic {
+namespace podcasthosting\Auphonic {
 
-    use de\podcaster\Auphonic\Client\Preset;
-    use de\podcaster\Auphonic\Client\Production;
-    use de\podcaster\Auphonic\Token\Token;
+    use podcasthosting\Auphonic\Client\Preset;
+    use podcasthosting\Auphonic\Client\Production;
+    use podcasthosting\Auphonic\Token\Token;
     use Buzz\Browser;
     use GuzzleHttp\Psr7\Request;
     use Psr\Http\Message\RequestInterface;

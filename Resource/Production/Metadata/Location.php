@@ -1,14 +1,14 @@
 <?php
 
-namespace de\podcaster\Auphonic\Resource\Production\Metadata {
+namespace podcasthosting\Auphonic\Resource\Production\Metadata {
 
-    use de\podcaster\Auphonic\ParseTrait;
+    use podcasthosting\Auphonic\ParseTrait;
 
     /**
      * Class Location
      * Subset of the production metadata.
      *
-     * @package de\podcaster\Resource\Production\Metadata
+     * @package podcasthosting\Resource\Production\Metadata
      */
     class Location
     {

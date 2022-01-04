@@ -1,10 +1,37 @@
 {
+    "name": "podcasthosting/auphonic-client",
+    "description": "A PHP library to access the audio service Auphonic through its API.",
+    "keywords": [
+        "auphonic",
+        "audio",
+        "audio-processing",
+        "podcast",
+        "podcaster",
+        "podcasting",
+        "api"
+    ],
+    "homepage": "https://github.com/podcasthosting/auphonic-client",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabio Bacigalupo",
+            "email": "support@podcaster.de",
+            "homepage": "https://www.podcaster.de"
+        }
+    ],
     "require": {
-        "nyholm/psr7": "^1.3",
-        "guzzlehttp/guzzle": "^7.2",
-        "kriswallsmith/buzz": "^1.1"
+        "php": ">=7.2.0",
+        "nyholm/psr7": "^1.4.1",
+        "guzzlehttp/guzzle": "^7.4.1",
+        "kriswallsmith/buzz": "^1.2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.4"
+        "phpunit/phpunit": "^9.5.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "podcasthosting\\Auphonic\\": "src/"
+        }
     }
 }

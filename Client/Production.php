@@ -1,8 +1,8 @@
 <?php
-namespace de\podcaster\Auphonic\Client {
+namespace podcasthosting\Auphonic\Client {
 
-    use de\podcaster\Auphonic\Client;
-    use de\podcaster\Auphonic\Exception;
+    use podcasthosting\Auphonic\Client;
+    use podcasthosting\Auphonic\Exception;
 
     class Production
     {
@@ -30,11 +30,11 @@ namespace de\podcaster\Auphonic\Client {
         }
 
         /**
-         * @param \de\podcaster\Auphonic\Resource\Production $production
-         * @return \de\podcaster\Auphonic\Resource\Production
+         * @param \podcasthosting\Auphonic\Resource\Production $production
+         * @return \podcasthosting\Auphonic\Resource\Production
          * @throws Exception
          */
-        public function create(\de\podcaster\Auphonic\Resource\Production $production, $preset = null, $webhook = null)
+        public function create(\podcasthosting\Auphonic\Resource\Production $production, $preset = null, $webhook = null)
         {
             // create Url object.
             $url = $this->client->createApiUrl(self::APIURL_RESOURCE);
@@ -59,7 +59,7 @@ namespace de\podcaster\Auphonic\Client {
 
             $production = $this->client->decode($result, 'production');
 
-            if (!($production instanceof \de\podcaster\Auphonic\Resource\Production)) {
+            if (!($production instanceof \podcasthosting\Auphonic\Resource\Production)) {
                 throw new Exception(sprintf("Production expected but %s given",
                     get_class($production)));
             }
@@ -78,7 +78,7 @@ namespace de\podcaster\Auphonic\Client {
 
             $production = $this->client->decode($result, 'production');
 
-            if (!($production instanceof \de\podcaster\Auphonic\Resource\Production)) {
+            if (!($production instanceof \podcasthosting\Auphonic\Resource\Production)) {
                 throw new Exception(sprintf("Production expected but %s given",
                     get_class($production)));
             }
@@ -97,7 +97,7 @@ namespace de\podcaster\Auphonic\Client {
 
             $production = $this->client->decode($result, 'production');
 
-            if (!($production instanceof \de\podcaster\Auphonic\Resource\Production)) {
+            if (!($production instanceof \podcasthosting\Auphonic\Resource\Production)) {
                 throw new Exception(sprintf("Production expected but %s given",
                     get_class($production)));
             }
@@ -108,7 +108,7 @@ namespace de\podcaster\Auphonic\Client {
         /**
          * Returns a list with all productions received from auphonic.
          *
-         * @return \de\podcaster\Auphonic\Resource\Production[]
+         * @return \podcasthosting\Auphonic\Resource\Production[]
          */
         public function getList()
         {

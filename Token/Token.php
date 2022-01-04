@@ -1,14 +1,14 @@
 <?php
 
-namespace de\podcaster\Auphonic\Token;
+namespace podcasthosting\Auphonic\Token;
 
-use de\podcaster\Auphonic\Exception;
+use podcasthosting\Auphonic\Exception;
 
 /**
  * Class Token
  * Representation of an auphonic API token.
  *
- * @package de\podcaster\Token
+ * @package podcasthosting\Token
  */
 class Token implements \Serializable {
 

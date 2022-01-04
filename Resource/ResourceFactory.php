@@ -1,6 +1,6 @@
 <?php
 
-namespace de\podcaster\Auphonic\Resource {
+namespace podcasthosting\Auphonic\Resource {
 
     interface ResourceFactory
     {

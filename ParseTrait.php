@@ -5,7 +5,7 @@
  * Time: 11:26
  */
 
-namespace de\podcaster\Auphonic {
+namespace podcasthosting\Auphonic {
 
     trait ParseTrait {
         public function __set($name, $value)

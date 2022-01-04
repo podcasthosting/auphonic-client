@@ -1,12 +1,12 @@
 <?php
 
-namespace de\podcaster\Auphonic\Resource {
+namespace podcasthosting\Auphonic\Resource {
 
-    use de\podcaster\Auphonic\ParseTrait;
-    use de\podcaster\Auphonic\Resource\Production\Metadata;
-    use de\podcaster\Auphonic\Resource\Production\OutputFiles;
-    use de\podcaster\Auphonic\Resource\Production\OutgoingService;
-    use de\podcaster\Auphonic\Resource\Production\Algorithms;
+    use podcasthosting\Auphonic\ParseTrait;
+    use podcasthosting\Auphonic\Resource\Production\Metadata;
+    use podcasthosting\Auphonic\Resource\Production\OutputFiles;
+    use podcasthosting\Auphonic\Resource\Production\OutgoingService;
+    use podcasthosting\Auphonic\Resource\Production\Algorithms;
 
     class Production implements \JsonSerializable
     {
@@ -243,7 +243,7 @@ namespace de\podcaster\Auphonic\Resource {
         }
 
         /**
-         * @param \de\podcaster\Auphonic\Resource\Production\OutgoingService[] $outgoing_services
+         * @param \podcasthosting\Auphonic\Resource\Production\OutgoingService[] $outgoing_services
          */
         public function setOutgoingServices($outgoing_services)
         {
@@ -251,7 +251,7 @@ namespace de\podcaster\Auphonic\Resource {
         }
 
         /**
-         * @return \de\podcaster\Auphonic\Resource\Production\OutgoingService[]
+         * @return \podcasthosting\Auphonic\Resource\Production\OutgoingService[]
          */
         public function getOutgoingServices()
         {
@@ -275,7 +275,7 @@ namespace de\podcaster\Auphonic\Resource {
         }
 
         /**
-         * @param \de\podcaster\Auphonic\Resource\Production\OutputFiles[] $output_files
+         * @param \podcasthosting\Auphonic\Resource\Production\OutputFiles[] $output_files
          */
         public function setOutputFiles($output_files)
         {
@@ -283,7 +283,7 @@ namespace de\podcaster\Auphonic\Resource {
         }
 
         /**
-         * @return \de\podcaster\Auphonic\Resource\Production\OutputFiles[]
+         * @return \podcasthosting\Auphonic\Resource\Production\OutputFiles[]
          */
         public function getOutputFiles()
         {
