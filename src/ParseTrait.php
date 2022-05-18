@@ -32,7 +32,9 @@ namespace podcasthosting\Auphonic {
             foreach ($sourceProperties as $sourceProperty) {
                 $name = $sourceProperty->getName();
                 if (gettype($destination->{$name}) == "object") {
-                    self::cast($destination->{$name}, $source->$name);
+                    if ($source->$name) {
+                        self::cast($destination->{$name}, $source->$name);
+                    }
                 } else {
                     $destination->{$name} = $source->$name;
                 }

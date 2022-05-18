@@ -53,7 +53,7 @@ namespace podcasthosting\Auphonic\Client {
                 $aData['webhook'] = $webhook;
             }
 
-            $request->setContent(json_encode($aData));
+            $request = array_merge($request, $aData);
 
             $result = $this->client->process($request);
 
