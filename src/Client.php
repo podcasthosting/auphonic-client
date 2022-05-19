@@ -107,6 +107,14 @@ namespace podcasthosting\Auphonic {
         }
 
         /**
+         * @return string|null
+         */
+        public function getToken()
+        {
+            return $this->token;
+        }
+
+        /**
          * @param null|string $password
          */
         public function setPassword($password)
