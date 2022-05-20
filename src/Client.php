@@ -189,8 +189,8 @@ namespace podcasthosting\Auphonic {
         public function process(array $request)
         {
             $client = new \GuzzleHttp\Client();
-            $request = new Request($request['method'], $request['url'], $request['headers']);
-            $response = $client->send($request, $request['body'] ?? []);
+            $_request = new Request($request['method'], $request['url'], $request['headers']);
+            $response = $client->send($_request, $request['body'] ?? []);
 
             if ($response->getStatusCode() !== 200) {
                 throw new Exception(sprintf("Invalid status code '%s'.", $response->getStatusCode()));
