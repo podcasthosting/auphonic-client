@@ -41,19 +41,17 @@ namespace podcasthosting\Auphonic\Client {
             // get request instance
             $request = $this->client->createRequest('POST', $url);
 
-            $aData = [
-                'metadata' => $production->getMetadata()
-            ];
+            $_aData['metadata'] = $production->getMetadata();
 
             if ($preset && !is_null($preset)) {
-                $aData['preset'] = $preset;
+                $_aData['preset'] = $preset;
             }
 
             if ($webhook && !is_null($webhook)) {
-                $aData['webhook'] = $webhook;
+                $_aData['webhook'] = $webhook;
             }
 
-            $request = array_merge($request, $aData);
+            $request = array_merge($request, ['body' => ['json' => $_aData]]);
 
             $result = $this->client->process($request);
 

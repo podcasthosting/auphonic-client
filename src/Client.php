@@ -190,7 +190,7 @@ namespace podcasthosting\Auphonic {
         {
             $client = new \GuzzleHttp\Client();
             $request = new Request($request['method'], $request['url'], $request['headers']);
-            $response = $client->send($request);
+            $response = $client->send($request, $request['body'] ?? []);
 
             if ($response->getStatusCode() !== 200) {
                 throw new Exception(sprintf("Invalid status code '%s'.", $response->getStatusCode()));
