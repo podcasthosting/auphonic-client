@@ -27,6 +27,11 @@ class Preset
         $this->client = $client;
     }
 
+    /**
+     * @param \podcasthosting\Auphonic\Resource\Preset $preset
+     * @return void
+     * @throws Exception
+     */
     public function create(\podcasthosting\Auphonic\Resource\Preset $preset)
     {
         // create Url object.

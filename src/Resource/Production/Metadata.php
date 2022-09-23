@@ -3,6 +3,7 @@
 namespace podcasthosting\Auphonic\Resource\Production {
 
     use podcasthosting\Auphonic\ParseTrait;
+    use podcasthosting\Auphonic\Resource\Production\Metadata\Chapters;
     use podcasthosting\Auphonic\Resource\Production\Metadata\Location;
     use podcasthosting\Auphonic\Resource\ResourceFactory;
 
@@ -117,6 +118,15 @@ namespace podcasthosting\Auphonic\Resource\Production {
          */
         protected $location;
 
+        /**
+         * Chapter metadata subsect
+         *
+         * @var Chapters
+         */
+        protected $chapters = [];
+
+        protected /*string*/ $cover;
+
         function __construct()
         {
             $this->location = new Location();
@@ -143,7 +153,7 @@ namespace podcasthosting\Auphonic\Resource\Production {
          */
         public function setAppendChapters($append_chapters)
         {
-            $this->append_chapters = $append_chapters;
+            $this->append_chapters = filter_var($append_chapters, FILTER_VALIDATE_BOOLEAN);
         }
 
         /**
@@ -298,6 +308,13 @@ namespace podcasthosting\Auphonic\Resource\Production {
             return $this->tags;
         }
 
+        public function addTag(string $tag)
+        {
+            array_push($this->tags, $tag);
+
+            return $this->tags;
+        }
+
         /**
          * @param string $title
          */
@@ -363,11 +380,59 @@ namespace podcasthosting\Auphonic\Resource\Production {
         }
 
         /**
+         * @param array $chapters
+         * @return array|Chapters
+         */
+        public function setChapters(array $chapters)
+        {
+            $this->chapters = $chapters;
+
+            return $this->chapters;
+        }
+
+        /**
+         * @return array|Chapters
+         */
+        public function getChapters()
+        {
+            return $this->chapters;
+        }
+
+        /**
+         * @param array $chapter
+         * @return array|Chapters
+         */
+        public function addChapter(array $chapter)
+        {
+            array_push($this->chapters, $chapter);
+
+            return $this->chapters;
+        }
+
+        /**
          * @inheritdoc
          */
         public static function create()
         {
             return new self();
+        }
+
+        /**
+         * @return mixed
+         */
+        public function getCover()
+        {
+            return $this->cover;
+        }
+
+        /**
+         * @param mixed $cover
+         */
+        public function setCover($cover): string
+        {
+            $this->cover = $cover;
+
+            return $this->cover;
         }
     }
 }
