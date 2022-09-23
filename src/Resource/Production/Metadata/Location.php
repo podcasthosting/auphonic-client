@@ -30,6 +30,22 @@ namespace podcasthosting\Auphonic\Resource\Production\Metadata {
 
         /**
          * @param float $latitude
+         * @param float $longitude
+         */
+        public function __construct(array $location = [])
+        {
+            if (isset($location['longitude'])) {
+                $this->setLongitude($location['longitude']);
+            }
+
+            if (isset($location['latitude'])) {
+                $this->setLatitude($location['latitude']);
+            }
+        }
+
+
+        /**
+         * @param float $latitude
          */
         public function setLatitude($latitude)
         {
