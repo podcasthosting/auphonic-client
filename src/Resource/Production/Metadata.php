@@ -125,7 +125,7 @@ namespace podcasthosting\Auphonic\Resource\Production {
          */
         protected $chapters = [];
 
-        protected /*string*/ $cover;
+        protected /*string*/ $image;
 
         function __construct()
         {
@@ -410,29 +410,27 @@ namespace podcasthosting\Auphonic\Resource\Production {
         }
 
         /**
+         * @return mixed
+         */
+        public function getImage()
+        {
+            return $this->image;
+        }
+
+        /**
+         * @param mixed $image
+         */
+        public function setImage($image): void
+        {
+            $this->image = $image;
+        }
+
+        /**
          * @inheritdoc
          */
         public static function create()
         {
             return new self();
-        }
-
-        /**
-         * @return mixed
-         */
-        public function getCover()
-        {
-            return $this->cover;
-        }
-
-        /**
-         * @param mixed $cover
-         */
-        public function setCover($cover): string
-        {
-            $this->cover = $cover;
-
-            return $this->cover;
         }
     }
 }
