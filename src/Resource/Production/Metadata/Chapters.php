@@ -27,6 +27,7 @@ class Chapters
 
     /**
      * @string $url
+     * @example "<https://www.podcaster.de>"
      */
     protected /*string*/ $url;
 }

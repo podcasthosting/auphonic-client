@@ -123,7 +123,7 @@ namespace podcasthosting\Auphonic\Resource\Production {
          *
          * @var Chapters
          */
-        protected $chapters = [];
+        protected $chapters = '';
 
         protected /*string*/ $image;
 
@@ -310,7 +310,7 @@ namespace podcasthosting\Auphonic\Resource\Production {
 
         public function addTag(string $tag)
         {
-            array_push($this->tags, $tag);
+            $this->tags[] = $tag;
 
             return $this->tags;
         }
@@ -380,10 +380,10 @@ namespace podcasthosting\Auphonic\Resource\Production {
         }
 
         /**
-         * @param array $chapters
-         * @return array|Chapters
+         * @param string $chapters
+         * @return string|Chapters
          */
-        public function setChapters(array $chapters)
+        public function setChapters(string $chapters)
         {
             $this->chapters = $chapters;
 
@@ -399,12 +399,12 @@ namespace podcasthosting\Auphonic\Resource\Production {
         }
 
         /**
-         * @param array $chapter
+         * @param string $chapter
          * @return array|Chapters
          */
-        public function addChapter(array $chapter)
+        public function addChapter(string $chapter)
         {
-            array_push($this->chapters, $chapter);
+            $this->chapters .= $chapter . PHP_EOL;
 
             return $this->chapters;
         }

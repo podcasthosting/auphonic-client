@@ -3,7 +3,6 @@ namespace podcasthosting\Auphonic\Client;
 
 use podcasthosting\Auphonic\Exception;
 use podcasthosting\Auphonic\Client;
-use podcasthosting\Auphonic\Resource\Production\Metadata;
 
 class Preset
 {
