@@ -14,7 +14,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class Client extends AbstractProvider
 {
-    const AUPHONIC_URL = 'https://auphonic.com/';
+    const AUPHONIC_URL = 'https://auphonic.com';
 
     /**
      * @inheritDoc
@@ -37,7 +37,7 @@ class Client extends AbstractProvider
      */
     public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
-        return self::AUPHONIC_URL . '/api/user.json?bearer_token=' . $token->getToken();
+        return self::AUPHONIC_URL . '/api/user.json';
     }
 
     /**
@@ -45,7 +45,7 @@ class Client extends AbstractProvider
      */
     protected function getDefaultScopes()
     {
-        return ['*'];
+        return [];
     }
 
     /**
@@ -54,7 +54,11 @@ class Client extends AbstractProvider
     protected function checkResponse(ResponseInterface $response, $data)
     {
         if ($response->getStatusCode() >= 400) {
-            throw new IdentityProviderException('Invalid response from Auphonic', $response->getStatusCode(), $response->getBody()->getContents());
+            throw new IdentityProviderException(
+                $data['message'] ?: $response->getReasonPhrase(),
+                $response->getStatusCode(),
+                $response
+            );
         }
     }
 
@@ -63,6 +67,6 @@ class Client extends AbstractProvider
      */
     protected function createResourceOwner(array $response, AccessToken $token)
     {
-        throw new \Exception('Not implemented.');
+        return (new AuphonicResourceOwner($response))->setDomain(self::AUPHONIC_URL);
     }
 }
