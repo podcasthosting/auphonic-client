@@ -37,7 +37,7 @@ class Client extends AbstractProvider
      */
     public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
-        return self::AUPHONIC_URL . '/api/user.json';
+        return self::AUPHONIC_URL . '/api/user.json?bearer_token=' . $token->getToken();
     }
 
     /**
@@ -55,7 +55,7 @@ class Client extends AbstractProvider
     {
         if ($response->getStatusCode() >= 400) {
             throw new IdentityProviderException(
-                $data['message'] ?: $response->getReasonPhrase(),
+                $data['message'] ?? $response->getReasonPhrase(),
                 $response->getStatusCode(),
                 $response
             );
